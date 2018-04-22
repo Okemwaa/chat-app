@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Okemwaa/chat-app#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "firebase": "^4.13.1"
   }
 }
