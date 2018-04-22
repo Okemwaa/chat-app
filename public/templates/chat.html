@@ -1,0 +1,8 @@
+<blockquote>
+  {{ name }} <br> {{ message}}
+</blockquote>
+<form name="textForm" ng-submit="sendMessage()">
+  <input type="text" placeholder="Name" ng-model="name" required>
+  <input type="text" placeholder="Message" ng-model="message">
+  <button ng-disabled="textForm.$invalid">Send</button>
+</form>
