@@ -7,12 +7,22 @@
   </head>
 
   <body ng-app="chatApp">
-    <div>
-      <chat></chat>
+    <div ng-controller="chatController">
+      <div ng-repeat="message in messages">
+        <blockquote ng-hide="message.edit">{{ message.text}}</blockquote>
+        <textarea ng-show="message.edit" ng-model="message.text"></textarea>
+        <button ng-hide="message.edit" ng-click="deleteMessage(message)">Delete Message</button>
+        <button ng-hide="message.edit" ng-click="edit($index)">Edit</button>
+        <button ng-show="message.edit" ng-click="cancel($index)">Cancel</button>
+        <button ng-show="message.edit" ng-click="editMessage(message, $index)">Save</button>
+      </div>
     </div>
+    <chat></chat>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.10/angular-resource.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script src="app.js"></script>
+    <script src="database/config.js"></script>
     <script src="controllers/chatController.js"></script>
     <script src="directive/chat.js"></script>
   </body>

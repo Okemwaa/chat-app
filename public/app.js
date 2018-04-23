@@ -1,3 +1,3 @@
 (function() {
-  angular.module('chatApp', ['ngResource']);
+  angular.module('chatApp', ['firebase']);
 }());
